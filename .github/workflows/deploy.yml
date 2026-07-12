@@ -7,7 +7,7 @@ on:
 
 permissions:
   contents: read
-  pages: write
+  pages: write 
   id-token: write
 
 jobs:
@@ -20,6 +20,7 @@ jobs:
         uses: withastro/action@v3
         with:
           path: ./portafolio-v2
+          node-version: 22
 
   deploy:
     needs: build
