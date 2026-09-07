@@ -225,18 +225,21 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
     top: 0;
     width: 100%;
     height: 100%;
+    padding: 90px 20px 30px;
     overflow: auto;
     overscroll-behavior: contain;
     background-color: rgba(0, 0, 0, 0.5);
+    align-items: flex-start;
+    justify-content: center;
   }
 
   .popup:target {
-    display: block;
+    display: flex;
   }
 
   /* ---------- Variante 1: popup simple (significado de las siglas) ---------- */
   .popup-contenido {
-    margin: 10% auto;
+    margin: 0;
     max-width: 480px;
     width: 85%;
     position: relative;
@@ -311,7 +314,7 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
   /* ---------- Variante 2: popups de pasos con fotos ---------- */
   .popup-fotos {
     background-color: #fefefe;
-    margin: 8% auto;
+    margin: 0;
     padding: 20px;
     border-radius: 15px;
     border: 3px solid #0d1b4c;
@@ -434,6 +437,10 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
   @media (min-width: 700px) {
     .lenguaje {
       padding-top: 130px;
+    }
+
+    .popup {
+      padding-top: 110px;
     }
   }
 </style>

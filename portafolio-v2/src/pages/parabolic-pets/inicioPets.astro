@@ -1,5 +1,5 @@
 ---
-import BaseLayoutParty from '../../layouts/BaseLayoutParty.astro';
+import BaseLayoutPets from '../../layouts/BaseLayoutPets.astro';
 
 // Símbolos matemáticos flotando: posiciones "pseudo-aleatorias" deterministas
 
@@ -21,7 +21,7 @@ const symbolsTitulo = makeSymbols(7, 1);
 const symbolsAyuda = makeSymbols(6, 5);
 ---
 
-<BaseLayoutParty>
+<BaseLayoutPets>
 
     <!-- Puntos de progreso: van marcando en qué parte de la historia vas -->
     <nav class="scene-dots" aria-label="Progreso de la historia">
@@ -117,7 +117,7 @@ const symbolsAyuda = makeSymbols(6, 5);
         </div>
     </section>
 
-</BaseLayoutParty>
+</BaseLayoutPets>
 
 <script>
   const revealEls = document.querySelectorAll('[data-animate]');
