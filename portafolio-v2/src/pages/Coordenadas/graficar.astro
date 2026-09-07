@@ -1,0 +1,348 @@
+---
+import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
+---
+
+<BaseLayoutCoord>
+
+  <section class="visualiza">
+    <h1>VISUALIZA EL ESPACIO</h1>
+    <p class="subtitulo">
+      Domina las coordenadas esféricas con herramientas interactivas
+      y se un experto a la hora de graficarlas.
+    </p>
+
+    <div class="ggb-wrap" id="ggbWrap">
+      <div class="ggb-frame" id="ggbFrame">
+        <!-- TODO: reemplaza el link por el applet de coordenadas esféricas -->
+        <iframe
+          src="https://www.geogebra.org/classic/H5SAVTXy"
+          width="900"
+          height="850"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="ahora">
+    <div class="ahora-contenido">
+      <h2>OKEY....PERO AHORA<br>¿COMO HAGO ESO?</h2>
+
+      <div class="botones">
+        <a href="#popupPapel">
+          <button class="btn-opcion">
+            <img src="/proyects/imagenes/coordenadas/papel.png" alt="" loading="lazy" decoding="async">
+            PAPEL
+          </button>
+        </a>
+        <a href="#popupGeogebra">
+          <button class="btn-opcion">
+            <img src="/proyects/imagenes/coordenadas/geogebra.png" alt="" loading="lazy" decoding="async">
+            GEOGEBRA
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <img
+      class="robot"
+      src="/proyects/imagenes/coordenadas/LERP.png"
+      alt="Robot ELOA"
+      loading="lazy"
+      decoding="async"
+      onerror="this.style.display='none'"
+    />
+  </section>
+
+  <div id="popupPapel" class="popup">
+    <div class="popup-contenido">
+      <a href="#">
+        <span class="cerrar">&times;</span>
+      </a>
+      <!-- TODO: ajusta la ruta/cantidad de imágenes de los pasos en papel -->
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enPapel/1.png" alt="Paso 1 en papel" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enPapel/2.png" alt="Paso 2 en papel" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enPapel/3.png" alt="Paso 3 en papel" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enPapel/4.png" alt="Paso 4 en papel" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enPapel/5.png" alt="Paso 5 en papel" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enPapel/6.png" alt="Paso 6 en papel" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+  <div id="popupGeogebra" class="popup">
+    <div class="popup-contenido">
+      <a href="#">
+        <span class="cerrar">&times;</span>
+      </a>
+      <!-- TODO: ajusta la ruta/cantidad de imágenes de los pasos en geogebra -->
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enGeogebra/1.png" alt="Paso 1 en GeoGebra" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enGeogebra/2.png" alt="Paso 2 en GeoGebra" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enGeogebra/3.png" alt="Paso 3 en GeoGebra" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enGeogebra/4.png" alt="Paso 4 en GeoGebra" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enGeogebra/5.png" alt="Paso 5 en GeoGebra" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enGeogebra/6.png" alt="Paso 6 en GeoGebra" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enGeogebra/7.png" alt="Paso 7 en GeoGebra" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enGeogebra/8.png" alt="Paso 8 en GeoGebra" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enGeogebra/9.png" alt="Paso 9 en GeoGebra" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/enGeogebra/10.png" alt="Paso 10 en GeoGebra" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+</BaseLayoutCoord>
+
+<style>
+  /* Mismo sistema tipográfico que el resto del sitio: Space Grotesk para
+     títulos, Montserrat para texto de cuerpo. Ideal moverlo a
+     BaseLayoutCoord.astro como <link> para que no se descargue por
+     duplicado en cada página; por ahora queda aquí como @import. */
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Montserrat:wght@400;600&display=swap');
+
+  :root {
+    --font-display: 'Space Grotesk', Arial, sans-serif;
+    --font-body: 'Montserrat', Arial, sans-serif;
+  }
+
+  section {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .visualiza {
+    text-align: center;
+  }
+
+  .visualiza h1 {
+    color: #0d1b4c;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.6rem, 5vw, 2.4rem);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+    padding-top: 100px;
+  }
+
+  .subtitulo {
+    color: #333;
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    max-width: 480px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.4;
+  }
+
+  /* GeoGebra: el applet "classic" no se reacomoda solo en pantallas angostas
+     (se ve con zoom/recortado). En vez de forzarlo a un ancho chico, lo
+     renderizamos siempre a su tamaño de diseño (900x850) y escalamos TODO
+     el bloque de forma proporcional según el ancho disponible — así se ve
+     exactamente igual que en computadora, solo que más chico. El cálculo
+     del escalado va en el <script> de abajo. */
+  .ggb-wrap {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .ggb-frame {
+    box-sizing: border-box;
+    border: 4px solid #0d1b4c;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 6px 14px rgba(13, 27, 76, 0.25);
+    width: 900px;
+    height: 850px;
+    transform-origin: top left;
+  }
+
+  .ggb-frame iframe {
+    width: 900px;
+    height: 850px;
+    border: none;
+    display: block;
+  }
+
+  .ahora {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-bottom: 2.5rem;
+    overflow: visible;
+  }
+
+  .ahora-contenido {
+    flex: 1 1 auto;
+    z-index: 1;
+  }
+
+  .ahora h2 {
+    color: #d95d1e;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    line-height: 1.15;
+    margin: 0 0 1.5rem;
+  }
+
+  .botones {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.9rem;
+  }
+
+  .botones .btn-opcion {
+    background-color: #7a8c3f;
+    border: none;
+    border-radius: 30px;
+    padding: 0.85rem 2.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .botones .btn-opcion img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .botones .btn-opcion:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(122, 140, 63, 0.4);
+  }
+
+  .robot {
+    flex: 0 0 auto;
+    width: clamp(90px, 28vw, 160px);
+    height: auto;
+    align-self: flex-end;
+  }
+
+  @media (max-width: 480px) {
+    .ahora {
+      flex-wrap: wrap;
+    }
+    .robot {
+      margin-left: auto;
+    }
+  }
+
+
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 90px 20px 30px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .popup:target {
+    display: flex;
+  }
+
+  .popup-contenido {
+    background-color: #fefefe;
+    margin: 0;
+    padding: 20px;
+    border-radius: 15px;
+    border: 3px solid #0d1b4c;
+    width: 85%;
+    max-width: 600px;
+    position: relative;
+    text-align: center;
+    max-height: 80vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .popup-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .cerrar {
+    position: sticky;
+    top: 0;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: #0d1b4c;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 2;
+  }
+
+  .cerrar:hover,
+  .cerrar:focus {
+    background-color: #d95d1e;
+    color: #ffffff;
+  }
+
+  @media (min-width: 700px) {
+    .popup {
+      padding-top: 110px;
+    }
+  }
+</style>
+
+<script>
+  // Escala el bloque de GeoGebra según el ancho disponible, para que se vea
+  // igual que en escritorio en vez de mostrarse recortado/con zoom en mobile.
+  function ajustarGGB() {
+    const wrap = document.getElementById('ggbWrap');
+    const frame = document.getElementById('ggbFrame');
+    if (!wrap || !frame) return;
+
+    const anchoDiseno = 900;
+    const altoDiseno = 850;
+    const anchoDisponible = wrap.clientWidth;
+    const escala = Math.min(1, anchoDisponible / anchoDiseno);
+
+    frame.style.transform = `scale(${escala})`;
+    wrap.style.height = `${altoDiseno * escala}px`;
+  }
+
+  ajustarGGB();
+
+  if ('ResizeObserver' in window) {
+    const wrap = document.getElementById('ggbWrap');
+    if (wrap) {
+      const ro = new ResizeObserver(() => ajustarGGB());
+      ro.observe(wrap);
+    }
+  } else {
+    window.addEventListener('resize', ajustarGGB);
+  }
+</script>

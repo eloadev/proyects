@@ -1,0 +1,53 @@
+---
+import NavPartyProblems from '../components/NavPartyProblems.astro';
+import Footer from '../components/Footer.astro';
+---
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELOA Party Problems</title>
+  </head>
+  <body>
+    <NavPartyProblems />
+
+    <!-- contenido de cada proyecto -->
+    <main>
+        <slot /> 
+    </main>
+
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  html {
+    overflow-x: hidden;
+    width: 100%;
+    overscroll-behavior-x: none;
+  }
+
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    margin: 0;
+    position: relative;
+    overscroll-behavior-x: none;
+    touch-action: pan-y;
+  }
+
+  main {
+  padding-top: 100px; 
+}
+
+@media (max-width: 699px) {
+  main {
+    padding-top: 120px;
+  }
+}
+
+  * {
+    box-sizing: border-box;
+  }
+</style>

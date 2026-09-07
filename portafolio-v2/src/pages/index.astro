@@ -33,18 +33,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="circle c8"></div>
     </div>
         
-    <br /><br />
 <div class="tarjeta-central">
-    <br />
-    <img class="logo-central" src="imagenes/inicio/logo1FINALL.png"></div><br />
-
-<br /><br />
-<br /><br />
-<br /><br />
+    <img class="logo-central" src="/proyects/imagenes/inicio/logo1FINALL.png" alt="Logo de ELOA" fetchpriority="high" decoding="async" />
+</div>
 </section>
 
 <div class="container-lerp1-condel"> 
-    <img class="lerp1" src="imagenes/inicio/LERPsalu2.png" />
+    <img class="lerp1" src="/proyects/imagenes/inicio/LERPsalu2.png" alt="" decoding="async" />
 
     <div class="container_delgado">
         <p class="texto-principal">
@@ -53,78 +48,95 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
     <div class="container_redes">
         <a href="https://www.instagram.com/eloadevteam" target="_blank" rel="noopener noreferrer">
-        <img class="imagenes_redes" src="imagenes/inicio/instagram.png" alt="Instagram" />
-    </a>
-        <img class="imagenes_redes" src="imagenes/inicio/tiktol.png" /> 
+            <img class="imagenes_redes" src="/proyects/imagenes/inicio/instagram.png" alt="Instagram" decoding="async" />
+        </a>
         <a href="mailto:eloadevteam@gmail.com">
-        <img class="imagenes_redes" src="imagenes/inicio/correo.png" alt="Correo" />
-    </a>
+            <img class="imagenes_redes" src="/proyects/imagenes/inicio/correo.png" alt="Correo" decoding="async" />
+        </a>
     </div>
 </div>
 
-<div class="titulo-bienvenido">
-<h2>BIENVENIDOS A</h2>
-</div>
-
-<div class="container_abstracto">
-    <div class="logo-texto">
-    <img class="logo-bienvenida" src="imagenes/inicio/logoBienvenida.png" />
-    <div class="texto-texto">
-    <h4>Ingienería mexicana con propósito.</h4>
-    <p class="texto-abstracto"> En ELOA, transformamos la teoría en experiencias interactivas. Somos estudiantes comprometidos con facilitar el aprendizaje a través de juegos y herramientas, creando un ecosistema digital donde educar es divertido y simultáneo. Explora nuestra visión de la tecnología. </p>
+<section class="bienvenida">
+    <div class="bienvenida-decor bienvenida-decor-izq" aria-hidden="true"></div>
+    <div class="bienvenida-decor bienvenida-decor-der" aria-hidden="true"></div>
+    <div class="bienvenida-contenido">
+        <div class="bienvenida-texto-col">
+            <h2 class="bienvenida-titulo">
+                Bienvenidos a <span class="destacado-naranja">ELOA</span><br />
+                Ingeniería mexicana con propósito
+            </h2>
+            <p class="texto-abstracto"> En ELOA, transformamos la teoría en experiencias interactivas. Somos estudiantes comprometidos con facilitar el aprendizaje a través de juegos y herramientas, creando un ecosistema digital donde educar es divertido y simultáneo. </p>
+            <p class="bienvenida-cta">Explora nuestra visión de la tecnología.</p>
+        </div>
+        <img class="bienvenida-ilustracion" src="/proyects/imagenes/inicio/nosotros.png" alt="Ilustración estilo caricatura del equipo ELOA junto a su mascota robot, alrededor de una mesa" loading="lazy" decoding="async" />
     </div>
-</div>
-    <div class="texto-imagen">
-    <div class="textoO">
-        <img src="imagenes/inicio/programacion.png" width="80px" />
-        <p class="texto-arriba">Desarrolladores universitarios mexicanos</p>
-    </div>
-    <img class="imagenB" src="imagenes/inicio/junta.jpg" />
-    </div>
-</div>   
-<br /><br />
+</section>
+<br />
 
 <!--FRAME 3 FIGMA -->
 <h3 id="Proyectos">NUESTROS PROYECTOS</h3><br />
 <br/><br/>
 
 <div class="container2">
-  <div class="carruselcarousel-s">
+  <div class="carrusel-s">
     
-    <button class="nav-btn prev-btn" id="prevBtn" aria-label="Anterior"></button>
-    <button class="nav-btn next-btn" id="nextBtn" aria-label="Siguiente"></button>
+    <button class="nav-btn prev-btn" id="prevBtn" aria-label="Anterior" style="display:none;"></button>
+    <button class="nav-btn next-btn" id="nextBtn" aria-label="Siguiente" style="display:none;"></button>
 
     <div class="carrusel-container" id="carruselContainer">
       
       <div class="carrusel-tarjetas" id="carruselTarjetas">
         
-        <a href="ruta/a/particulas.html" class="team-member-cardd card1">
-          <div class="card-bottom"><img src="imagenes/inicio/miniLERP.png" /></div>
+        <div class="team-member-cardd card1" id="cardParticulas" role="button" tabindex="0">
+          <div class="card-bottom"><img src="/proyects/imagenes/inicio/miniLERP.png" alt="" loading="lazy" decoding="async" /></div>
+        </div>
+
+        <a href="/proyects/party-problems/inicioParty" class="team-member-cardd card2">
+          <div class="card-bottom"><img src="/proyects/imagenes/inicio/miniLERP.png" alt="" loading="lazy" decoding="async" /></div>
         </a>
 
-        <a href="ruta/a/party-problems.html" class="team-member-cardd card2">
-          <div class="card-bottom"><img src="imagenes/inicio/miniLERP.png" /></div>
+        <a href="/proyects/parabolic-pets/inicioPets" class="team-member-cardd card3">
+          <div class="card-bottom"><img src="/proyects/imagenes/inicio/miniLERP.png" alt="" loading="lazy" decoding="async" /></div>
         </a>
 
-        <a href="../calculadoraF/inicio/inicio.html" class="team-member-cardd card3">
-          <div class="card-bottom"><img src="imagenes/inicio/miniLERP.png" /></div>
+        <a href="/proyects/Calculadoras/calculadoras" class="team-member-cardd card4">
+            <div class="card-bottom"><img src="/proyects/imagenes/inicio/miniLERP.png" alt="" loading="lazy" decoding="async" /></div>
         </a>
 
-        <a href="../calculadoraF/inicio/inicio.html" class="team-member-cardd card4">
-          <div class="card-bottom"><img src="imagenes/inicio/miniLERP.png" /></div>
-        </a>
-
-        <a href="../coordenadasF/inicio/inicioC.html" class="team-member-cardd card5">
-          <div class="card-bottom"><img src="imagenes/inicio/miniLERP.png" /></div>
+        <a href="/proyects/Coordenadas/graficar" class="team-member-cardd card5">
+          <div class="card-bottom"><img src="/proyects/imagenes/inicio/miniLERP.png" alt="" loading="lazy" decoding="async" /></div>
         </a>
 
       </div> 
     </div> 
   </div> 
 </div>
+
+<!-- MODAL: Trabajo en progreso -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar">×</button>
+    <h2>Trabajo en progreso</h2>
+    <img class="modal-image" src="/proyects/imagenes/inicio/lerpBombilla.png" alt="Trabajo en progreso" />
+  </div>
+</div>
+
 </BaseLayout>
 
 <style> 
+
+/* Fuentes nuevas: Space Grotesk para títulos, IBM Plex Mono para el eyebrow "BIENVENIDOS A".
+   Idealmente esto se mueve al <head> de BaseLayout.astro como <link>, igual que
+   quedamos antes; lo dejo aquí como @import para que funcione de una vez. */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Mono:wght@500&family=Montserrat:wght@400;600&display=swap');
+
+:root{
+    --font-display: 'Space Grotesk', 'Oswald', Arial, sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+    --ink: black;
+    --navy: #182d42;
+    --bg: #F9F9F9;
+}
 
 /* FRAME 1 FIGMA*/
 /* General */
@@ -136,6 +148,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-family: Arial, Helvetica, sans-serif;
 }
 
+html{
+    overflow-x: hidden;
+}
+
 body{
     background-color: #F9F9F9;
     overflow-x: hidden; /* oculta lo que sale horizontalmente (izq-der) de un contendor*/
@@ -143,55 +159,57 @@ body{
     padding: 0;
 }
 
+/* ===== MOBILE FIRST: base para pantallas chicas ===== */
+
 .logo-central{
-    width: 600px; 
-    left:-100px; 
-    top: -200px;
+    width: 100%;
+    max-width: 280px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
     border-radius:10px; 
-    display:flex; 
-    justify-content:center; 
-    align-items:center; 
-    position:relative; /* mover un elmento respecto a su posicion original, sin sacarlo del flujo normal de la pagina*/
+    position:relative;
 }
 
 /* Hero (la parte despues del nav)*/
 
 .hero{ 
     text-align:center; 
-    padding:100px 20px; 
+    padding:110px 15px 55px 15px; /* 110px arriba para que no lo tape el nav fijo */
     position:relative; 
 }
 
 /* Tarjeta central (rectangulo con el logo ELOA) */ 
 
 .tarjeta-central{ 
-    width:280px; 
-    height:140px;
-    left:150px; 
-    top:40px;
-    margin:auto; 
+    width:100%; 
+    max-width: 280px;
+    height:auto;
+    margin:0 auto 40px auto; 
     border-radius:10px; 
     position:relative; 
 } 
 
 /* Titulo */ 
 h1{
-    margin-top:40px; 
-    font-size:60px; color:#624142; 
+    margin-top:20px; 
+    font-size:32px;
+    color:#624142; 
     text-shadow:2px 2px 5px rgba(0,0,0,0.2); 
 } 
 
 h2{
-    font-family: 'Franklin Gothic Medium';
-    letter-spacing: -4px;
-    font-size:80px; 
-    color:black; 
-    text-shadow:1px 1px 3px rgba(0,0,0,0.2); 
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0px;
+    font-size: clamp(1.7rem, 5vw, 2.75rem);
+    color: var(--ink);
 }
 
 p{ 
     margin-top:15px; 
-    font-size:20px; 
+    font-size:16px; 
     color:black; 
     font-family:Verdana, Geneva, Tahoma, sans-serif;
 } 
@@ -210,7 +228,23 @@ p{
     box-shadow:0 4px 8px rgba(0,0,0,0.2); 
 } 
 
-/* Circulos de imagenes */ 
+/* Circulos de imagenes decorativos: los 8 iconos orbitando y el segundo arco se ocultan en mobile (ver nota arriba); dejamos un arco chico visible para que no se vea vacío */ 
+
+.orbit-container,
+.aro2{
+    display: none;
+}
+
+.aro1{
+    display: block;
+    position:absolute;
+    width: 220px;
+    height: 220px;
+    border: 15px solid rgba(125, 171, 197);
+    border-radius: 50%;
+    left: -110px;
+    top: 60px;
+}
 
 .circle{ 
     position:absolute; /*poner los elementos en una posicion exacta*/
@@ -222,7 +256,7 @@ p{
     height:110px; 
     left:300px; 
     top: 40px; 
-    background-image: url('/imagenes/inicio/icon1.png');
+    background-image: url('/proyects/imagenes/inicio/icon1.png');
     background-size: cover;    /*  la imagen cubre todo el cuadro */
     background-position: center; /* centrar la imagen */
     position: absolute;
@@ -234,7 +268,7 @@ p{
      height:110px; 
      left:-50px; 
      top:380px;
-     background-image: url('/imagenes/inicio/icon2.png');
+     background-image: url('/proyects/imagenes/inicio/icon2.png');
     background-size: cover;    /*  la imagen cubre todo el cuadro */
     background-position: center; /* centrar la imagen */
     position: absolute; 
@@ -245,7 +279,7 @@ p{
     height:110px; 
     left:280px; 
     top:340px;
-    background-image: url('/imagenes/inicio/icon3.png');
+    background-image: url('/proyects/imagenes/inicio/icon3.png');
     background-size: cover;    /*  la imagen cubre todo el cuadro */
     background-position: center; /* centrar la imagen */
     position: absolute;
@@ -256,7 +290,7 @@ p{
     height:110px; 
     left:-90px; 
     top:-70px; 
-    background-image: url('/imagenes/inicio/icon4.png');
+    background-image: url('/proyects/imagenes/inicio/icon4.png');
     background-size: cover;    /*  la imagen cubre todo el cuadro */
     background-position: center; /* centrar la imagen */
     position: absolute;
@@ -266,8 +300,8 @@ p{
     width:110px; 
     height:110px; 
     right:10px; 
-    top:490px; 
-    background-image: url('/imagenes/inicio/icon5.png');
+    top:270px; 
+    background-image: url('/proyects/imagenes/inicio/icon5.png');
     background-size: cover;    /*  la imagen cubre todo el cuadro */
     background-position: center; /* centrar la imagen */
     position: absolute;
@@ -277,8 +311,8 @@ p{
     width:110px; 
     height:110px; 
     right:-10px; 
-    top:920px; 
-    background-image: url('/imagenes/inicio/icon6.png');
+    top:700px; 
+    background-image: url('/proyects/imagenes/inicio/icon6.png');
     background-size: cover;    /*  la imagen cubre todo el cuadro */
     background-position: center; /* centrar la imagen */
     position: absolute;
@@ -288,8 +322,8 @@ p{
     width:110px; 
     height:110px; 
     right:-300px; 
-    top:600px; 
-    background-image: url('/imagenes/inicio/icon7.png');
+    top:380px; 
+    background-image: url('/proyects/imagenes/inicio/icon7.png');
     background-size: cover;    /*  la imagen cubre todo el cuadro */
     background-position: center; /* centrar la imagen */
     position: absolute;
@@ -299,24 +333,14 @@ p{
     width:110px; 
     height:110px; 
     right:180px; 
-    top:680px; 
-    background-image: url('/imagenes/inicio/icon8.png');
+    top:460px; 
+    background-image: url('/proyects/imagenes/inicio/icon8.png');
     background-size: cover;    /*  la imagen cubre todo el cuadro */
     background-position: center; /* centrar la imagen */
     position: absolute;
 } 
 
-/* Aro del fondo */ 
-
-.aro1{ /* poner border en vez de background*/
-    position:absolute; 
-    width:500px; 
-    height:500px; 
-    border:30px solid rgba(125, 171, 197); 
-    border-radius:50%; 
-    left:-94px; 
-    top:-7px; 
-}
+/* Aro del fondo (el segundo, aro2, se restaura en la media query de escritorio) */ 
 
 .aro2{ /* poner border en vez de background*/
     position:absolute; 
@@ -325,180 +349,155 @@ p{
     border:30px solid rgba(125, 171, 197); 
     border-radius:50%; 
     right:-250px; 
-    top:500px; 
+    top:280px; 
 }
 
 .container_delgado{
     width: 100%;
-    height: 100px;
+    min-height: 100px;
     background-color: #182d42;
     display: flex;
     justify-content: center;
     align-items: center;  
     position: relative;  /* Acepta el z-index pero NO se sale de su caja */
     z-index: 10;   
+    padding: 15px 10px;
 }
 
 .texto-principal{
-    letter-spacing: 15px;
-    word-spacing: 20px;
-    font-size: 60px;
-    font-family: 'Franklin Gothic Medium';
+    letter-spacing: 3px;
+    word-spacing: 6px;
+    font-size: 22px;
+    font-family: var(--font-display);
+    font-weight: 600;
     color:#ffffff;
+    text-align: center;
 }
 
 .destacado-rosa{
-    font-family: 'Franklin Gothic Medium';
+    font-family: var(--font-display);
     color:#d8a2d8;
 }
 
 .destacado-naranja{
     
-    font-family: 'Franklin Gothic Medium';
+    font-family: var(--font-display);
     color:#da5d1a;
 }
 
 .container-lerp1-condel{
     display: flex;
     flex-direction: column; 
-    width: 100vw;
+    width: 100%;
+    align-items: center;
+    
     
 }
 
 .lerp1{
-    width: 450px;
-    height: 300px;
+    width: 90%;
+    max-width: 450px;
+    height: auto;
 }
 
 .imagenes_redes{
-    width: 40px;
-    height: 40px;   
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    transition: transform 0.2s ease;
+}
+
+.imagenes_redes:hover {
+    transform: scale(1.1);
 }
 
 .container_redes{
-    width: 200px;
-    height: 90px;
+    width: auto;
+    height: auto;
+    padding: 15px 0;
     display: flex;             
     justify-content: center;   
     align-items: center;
-    gap: 10px;        
+    gap: 28px;        
 }
 
-.titulo-bienvenido{
-    transform: rotate(-8deg) translateY(60px);
-    margin-bottom: 0;
-}
-
-.container_abstracto{
+.bienvenida{
+    position: relative;
     width: 100%;
-    height: 700px;
-    background-color:#182d42 ;
-    z-index: 9999;/*este arriba de todo*/
-    position: relative; /*esto para que funcione el z-index*/
-    display: flex;  
-    align-items: center;           
-    /* Orden de los puntos: Arriba-Izquierda, Arriba-Derecha, Abajo-Derecha, Abajo-Izquierda */
-    clip-path: polygon(0 25%, 100% 0, 100% 80%, 0 100%);      
+    background: var(--bg);
+    overflow: hidden;
 }
 
-.imagenB{
-    width: 250px;
-    height: 400px;
-    border-radius: 10%;  
-    margin-left: auto;  
+.bienvenida-decor{
+    display: none;
 }
 
-.logo-texto{
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    
-}
-
-.texto-texto{
-    justify-content: center; 
-    flex-direction: column;
-}
-
-h4{
+.bienvenida-contenido{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 48px 24px 56px;
     text-align: center;
-    font-size: 20px;
-    color: #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
-.logo-bienvenida{
-    margin: 30px;
-    width: 500px; 
-    border-radius:10px; 
+.bienvenida-texto-col{
+    width: 100%;
+}
 
+.bienvenida-ilustracion{
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    border-radius: 16px;
+}
+
+.bienvenida-logo{
+    width: 64px;
+    height: auto;
+    margin: 0 auto 18px;
+    display: block;
+}
+
+.bienvenida-titulo{
+    text-align: center;
 }
 
 .texto-abstracto{
-    line-height: 30px;
-    margin: 40px;
-    letter-spacing: 1px;
-    width: 500px;
-    text-align: justify;
-    height: auto;
-    font-size: 20px;
-    font-family: 'Lucida Sans Regular';
-    color:#ffffff;
-
-}
-
-.texto-imagen{
-    flex-direction: column;
-    display: flex;
-    height: 600px;
-    margin: 50px;
-
-}
-
-.textoO{
-    color: white;
-    padding: 10px;
-    margin-bottom: 20px;
-    width: 300px; 
-    height: 80px;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    gap: 10px;
-}
-
-.texto-arriba{
-    color: white;
-    padding: 5px;
+    line-height: 1.6;
+    margin: 14px auto 0;
+    letter-spacing: 0.2px;
+    width: 100%;
+    max-width: 480px;
+    text-align: center;
     font-size: 17px;
-    width: 200px; 
-    height: 70px;
-    font-family: 'Franklin Gothic';
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    color: #1b2e45;
+}
 
+.bienvenida-cta{
+    font-family: 'Montserrat', 'Arial', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 1.6;
+    letter-spacing: 0.2px;
+    color: #da5d1a;
+    margin: 14px auto 0;
+    max-width: 480px;
 }
 
 /* FRAME 2 FIGMA*/
 
 h3{
-    font-family: 'Franklin Gothic Medium';
-    letter-spacing: 4px;
-    font-size:60px; 
-    color:black; 
-    text-shadow:2px 2px 5px rgba(0,0,0,0.2); 
-    text-align: right;
-    margin-right: 20px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 28px;
+    color: var(--ink);
+    text-align: center;
 } 
-
-.container1{
-    display: flex;            
-    justify-content: center;   
-    align-items: center;       
-    gap: 30px;                
-    flex-wrap: wrap;          
-    padding: 10px;
-    width: 100%;
-    height: 450px;
-    background-color: #ADCDCD;
-}
 
 
 
@@ -506,9 +505,9 @@ h3{
 
 .container2{
     width: 100%;
-    height: 600px;
+    height: auto;
     background-color: #182d42;
-    
+    padding: 30px 0;
 }
 
 .carrusel-s {
@@ -516,15 +515,12 @@ h3{
     width: 90%;
     max-width: 1200px;
     margin: auto;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 /* Contenedor de scroll */
 .carrusel-container {
     overflow-x: auto;
     scrollbar-width: none;
-    overflow-x: hidden;
     display: flex;
 }
 
@@ -535,17 +531,18 @@ h3{
 /* Posters */
 .carrusel-tarjetas {
     display: flex;
-    gap: 20px;
-    padding: 20px 50px;
+    gap: 15px;
+    padding: 15px;
 }
 
 /* Diseño posters */
 .team-member-cardd {
-    flex: 0 0 300px;         
-    height: 550px;           
+    flex: 0 0 250px;
+    width: 250px;
+    height: 460px;
     background-color: white; 
     border-radius: 5px;
-    padding: 30px;
+    padding: 20px;
     
     /* Flexbox interno para separar el texto arriba y el logo abajo */
     display: flex;
@@ -562,6 +559,8 @@ h3{
     /* Evita que el link rompa el diseño */
     text-decoration: none !important;
     color: inherit;
+
+    cursor: pointer;
 }
 
 .team-member-cardd:hover {
@@ -569,15 +568,11 @@ h3{
     background-color: white;
 }
 
-.card1 { background-image: url('/imagenes/inicio/poster4.png'); }
-.card2 { background-image: url('/imagenes/inicio/poster5.png'); }
-.card3 { background-image: url('/imagenes/inicio/poster1.png'); }
-.card4 { background-image: url('/imagenes/inicio/poster3.png'); }
-.card5 { background-image: url('/imagenes/inicio/poster2.png'); }
-
-.team-member-cardd:hover {
-  transform: translateY(-10px);
-}
+.card1 { background-image: url('/proyects/imagenes/inicio/poster4.png'); }
+.card2 { background-image: url('/proyects/imagenes/inicio/poster5.png'); }
+.card3 { background-image: url('/proyects/imagenes/inicio/poster1.png'); }
+.card4 { background-image: url('/proyects/imagenes/inicio/poster3.png'); }
+.card5 { background-image: url('/proyects/imagenes/inicio/poster2.png'); }
 
 
 /* minilerp */
@@ -597,31 +592,6 @@ h3{
     transform: translateY(-10px);
     background-color: white;
 }
-
-/*
-Botones 
-.nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.7);
-    color: #624142;
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 10;
-    transition: 0.3s;
-}
-
-.nav-btn:hover { background-color: rgba(255, 255, 255, 0.4); }
-.prev-btn { left: -60px; }
-.next-btn { right: -60px; }
-.prev-btn::after { content: '‹'; }
-.next-btn::after { content: '›'; }
-*/
 
 /* Esto arregla que el link no corte la carta */
     .link-invisible {
@@ -645,22 +615,11 @@ Botones
         color: inherit;
     }
 
-    .team-member-cardd {
-        flex: 0 0 300px; 
-        width: 300px;    
-        height: 550px;   
-
-    }
-
     a.team-member-cardd h3 {
         margin: 0;
         color: white;
     }
-/*
-    * {
-  outline: 2px solid red !important;
-}
-  */
+  
 
     /* El contenedor es el que gira, pero es invisible */
     .orbit-container {
@@ -695,8 +654,329 @@ Botones
     }
 
     .c5-container, .c6-container, .c7-container, .c8-container {
-        transform-origin: calc(100% - 0px) 750px; /* Centro del segundo arco 
+        transform-origin: calc(100% - 0px) 530px; /* Centro del segundo arco */
     }
+
+/* ===== A partir de aquí, pantallas más grandes (tablet/escritorio): se restauran los valores originales del diseño ===== */
+@media (min-width: 700px) {
+
+    .logo-central{
+        width: 420px;
+        max-width: none;
+        height: 150px;
+    }
+
+    .hero{
+        padding: 90px 20px 55px 20px;
+    }
+
+    .tarjeta-central{
+        width: 420px;
+        max-width: 90%;
+        height: auto;
+        margin: 15px auto 40px auto;
+        left: 150px;
+    }
+
+    h1{
+        font-size: 60px;
+        margin-top: 40px;
+    }
+
+    h2{
+        letter-spacing: 0px;
+        font-size: 56px;
+    }
+
+    p{
+        font-size: 20px;
+    }
+
+    .orbit-container,
+    .aro1,
+    .aro2{
+        display: block;
+    }
+
+    .aro1{
+        width:500px; 
+        height:500px; 
+        border:30px solid rgba(125, 171, 197); 
+        left:-94px; 
+        top:-7px; 
+    }
+
+    .container_delgado{
+        min-height: 100px;
+        padding: 0;
+    }
+
+    .texto-principal{
+        letter-spacing: 15px;
+        word-spacing: 20px;
+        font-size: 60px;
+    }
+
+    .lerp1{
+        width: 450px;
+        max-width: none;
+        height: 300px;
+    }
+
+    .imagenes_redes{
+        width: 56px;
+        height: 56px;
+    }
+
+    .container_redes{
+        width: auto;
+        height: auto;
+        padding: 7px;
+        gap: 32px;
+    }
+
+    .bienvenida-contenido{
+        padding: 60px 24px 72px;
+    }
+
+    .bienvenida-logo{
+        width: 80px;
+        margin-bottom: 22px;
+    }
+
+    .texto-abstracto{
+        margin: 14px auto 0;
+        letter-spacing: 0.2px;
+        max-width: 560px;
+    }
+
+    .bienvenida-cta{
+        font-size: 18px;
+        max-width: 560px;
+    }
+
+    h3{
+        letter-spacing: 4px;
+        font-size: 60px;
+        text-align: right;
+        margin-right: 20px;
+    }
+
+    .container2{
+        height: 600px;
+        padding: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .carrusel-s{
+        top: 0;
+        transform: none;
+        width: 100%;
+        max-width: none;
+    }
+
+    .carrusel-tarjetas {
+        gap: 20px;
+        padding: 10px 20px;
+    }
+
+    .team-member-cardd {
+        flex: 0 0 300px;
+        width: 300px;
+        height: 540px;
+        padding: 30px;
+    }
+}
+
+/* ===== SOLO PARA TABLETS (iPad y similares), en cualquier orientación: 700px hasta 1099px.
+   Aquí SOLO achico los tamaños que en el paso anterior quedaron pensados para pantallas 
+   más anchas (compu), para que no se sientan amontonados en una columna angosta.
+   No toca nada de <700px (celular) ni de >=1100px (compu). ===== */
+@media (min-width: 700px) and (max-width: 1099px) {
+
+    /* Los 8 íconos orbitando y el segundo arco son para escritorio (1366px+);
+       en tablet los volvemos a ocultar, dejando solo el arco chico */
+    .orbit-container,
+    .aro2{
+        display: none;
+    }
+
+    .aro1{
+        display: block;
+    }
+
+    .logo-central{
+        width: 300px;
+        height: 110px;
+    }
+
+    .tarjeta-central{
+        width: 300px;
+        left: 0;
+        margin: 15px auto 25px auto;
+    }
+
+    h1{
+        font-size: 42px;
+    }
+
+    h2{
+        font-size: 42px;
+    }
+
+    .aro1{
+        width: 320px;
+        height: 320px;
+        border-width: 20px;
+        left: -70px;
+    }
+
+    .texto-principal{
+        letter-spacing: 6px;
+        word-spacing: 10px;
+        font-size: 36px;
+    }
+
+    .imagenes_redes{
+        width: 44px;
+        height: 44px;
+    }
+
+    .texto-abstracto{
+        margin: 14px auto 0;
+        max-width: 480px;
+    }
+
+    h3{
+        font-size: 40px;
+    }
+
+    .team-member-cardd {
+        flex: 0 0 260px;
+        width: 260px;
+        height: 480px;
+        padding: 24px;
+    }
+}
+
+/* ===== Solo en pantallas realmente anchas (computadoras): aquí sí ponemos el texto y la laptop en fila.
+   Entre 700px y 1099px (tablets como iPad) se queda en columna, para que nunca se encimen. ===== */
+@media (min-width: 1100px) {
+
+    .bienvenida-decor{
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+    }
+
+    .bienvenida-decor-izq{
+        width: 130px;
+        height: 130px;
+        border: 12px solid rgba(125, 171, 197, 0.35);
+        left: -55px;
+        top: 90px;
+    }
+
+    .bienvenida-decor-der{
+        width: 90px;
+        height: 90px;
+        border: 10px solid rgba(218, 93, 26, 0.25);
+        right: -35px;
+        bottom: 50px;
+    }
+
+    .bienvenida-contenido{
+        max-width: 1100px;
+        padding: 76px 40px 96px;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 24px;
+    }
+
+    .bienvenida-texto-col{
+        flex: 1 1 560px;
+        max-width: 620px;
+    }
+
+    .bienvenida-logo{
+        margin: 0 0 18px;
+    }
+
+    .texto-abstracto{
+        margin: 14px 0 0;
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .bienvenida-cta{
+        margin: 14px 0 0;
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .bienvenida-ilustracion{
+        flex: 1 1 360px;
+        max-width: 400px;
+    }
+
+    h2{
+        font-size: 48px;
+    }
+}
+
+/* MODAL: Trabajo en progreso */
+
+.modal-overlay{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal-overlay.activo{
+    display: flex;
+}
+
+.modal-box{
+    background: #F9F9F9;
+    border-radius: 12px;
+    padding: 32px;
+    max-width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    text-align: center;
+    position: relative;
+}
+
+.modal-box h2{
+    font-size: 26px;
+    color: var(--navy);
+}
+
+.modal-close{
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--navy);
+}
+
+.modal-image{
+    margin-top: 18px;
+    max-width: 30vh;
+    max-height: 30vh;
+    border-radius: 8px;
+}
 
 </style>
 
@@ -707,8 +987,6 @@ Botones
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById('carruselContainer');
     const track = document.querySelector('.carrusel-tarjetas');
-    const btnSiguiente = document.getElementById('nextBtn');
-    const btnAtras = document.getElementById('prevBtn');
 
     // Clonación de las tarjetas para crear el efecto infinito
     const tarjetas = Array.from(track.children);
@@ -716,11 +994,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const clon = tarjeta.cloneNode(true);
         track.appendChild(clon); // se ponen los clones al final
     });
-
-    const obtenerAnchoBase = () => {
-        const tarjeta = document.querySelector('.team-member-card1');
-        return tarjeta ? tarjeta.offsetWidth + 20 : 320;
-    };
 
     // Movimiento automático
     let velocidad = 1.0; // el tiempo en el q se mueven
@@ -741,19 +1014,38 @@ document.addEventListener("DOMContentLoaded", () => {
     // iniciar el loop
     requestAnimationFrame(loopInfinito);
 
-    /*// botones para mover 
-    btnSiguiente.onclick = () => {
-        container.scrollLeft += obtenerAnchoBase();
-        if (container.scrollLeft >= track.scrollWidth / 2) container.scrollLeft = 0;
-    };
-
-    btnAtras.onclick = () => {
-        if (container.scrollLeft <= 0) container.scrollLeft = track.scrollWidth / 2;
-        container.scrollLeft -= obtenerAnchoBase();
-    };*/
-
     // pausa al pasar el mouse
     container.onmouseenter = () => pausa = true;
     container.onmouseleave = () => pausa = false;
+
+    // POPUP TARJETA PARTICULAS
+    const modalOverlay = document.getElementById('modalOverlay');
+    const modalClose = document.getElementById('modalClose');
+
+    // Delegación de eventos: como el carrusel clona las tarjetas,
+    // esto asegura que el popup funcione tanto en el original como en los clones.
+    container.addEventListener('click', (e) => {
+        const tarjeta = e.target.closest('#cardParticulas');
+        if (tarjeta) {
+            modalOverlay.classList.add('activo');
+        }
+    });
+
+    container.addEventListener('keydown', (e) => {
+        if ((e.key === 'Enter' || e.key === ' ') && e.target.id === 'cardParticulas') {
+            e.preventDefault();
+            modalOverlay.classList.add('activo');
+        }
+    });
+
+    modalClose?.addEventListener('click', () => {
+        modalOverlay.classList.remove('activo');
+    });
+
+    modalOverlay?.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            modalOverlay.classList.remove('activo');
+        }
+    });
 });
 </script>

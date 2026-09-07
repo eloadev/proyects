@@ -1,0 +1,446 @@
+---
+import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
+---
+
+<BaseLayoutCoord>
+
+  <section class="lenguaje">
+
+    <!-- Círculo decorativo de fondo -->
+    <span class="circulo circulo-right"></span>
+
+    <div class="contenido">
+      <h1>EL LENGUAJE DE LAS DIMENSIONES</h1>
+      <p class="subtitulo">
+        Cambiar de un sistema a otro no debería ser un dolor de cabeza.
+        Aqui tienes el mapa de ruta.
+      </p>
+
+      <div class="bloque-conversion">
+        <p class="etiqueta">Convertir de un sistema a otro</p>
+        <!-- TODO: apunta al link/página real de la conversión SRC -> SCE -->
+        <a href="#popupConversion" class="btn-conversion">
+          <button>SRC - SCE</button>
+        </a>
+      </div>
+
+       <div id="popupConversion" class="popup">
+    <div class="popup-fotos">
+      <a href="#">
+        <span class="cerrar-fotos">&times;</span>
+      </a>
+      <!-- TODO: ajusta la ruta/cantidad de imágenes de los pasos en papel -->
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/SCR-SCE/1.png" alt="Conversión SRC a SCE, paso 1" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/SCR-SCE/2.png" alt="Conversión SRC a SCE, paso 2" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/SCR-SCE/3.png" alt="Conversión SRC a SCE, paso 3" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/SCR-SCE/4.png" alt="Conversión SRC a SCE, paso 4" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/SCR-SCE/5.png" alt="Conversión SRC a SCE, paso 5" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/SCR-SCE/6.png" alt="Conversión SRC a SCE, paso 6" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/SCR-SCE/7.png" alt="Conversión SRC a SCE, paso 7" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+      <div class="conversion-con-info">
+        <div class="bloque-conversion">
+          <p class="etiqueta">Convertir de un sistema a otro</p>
+          <!-- TODO: apunta al link/página real de la conversión SCC -> SCE -->
+          <a href="#popupConversion2" class="btn-conversion">
+            <button>SCC - SCE</button>
+          </a>
+        </div>
+
+          <div id="popupConversion2" class="popup">
+    <div class="popup-fotos">
+      <a href="#">
+        <span class="cerrar-fotos">&times;</span>
+      </a>
+      <!-- TODO: ajusta la ruta/cantidad de imágenes de los pasos en papel -->
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/SCC-SCE/1.png" alt="Conversión SCC a SCE, paso 1" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/SCC-SCE/2.png" alt="Conversión SCC a SCE, paso 2" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/SCC-SCE/3.png" alt="Conversión SCC a SCE, paso 3" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/SCC-SCE/4.png" alt="Conversión SCC a SCE, paso 4" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/SCC-SCE/5.png" alt="Conversión SCC a SCE, paso 5" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/SCC-SCE/6.png" alt="Conversión SCC a SCE, paso 6" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+        <a href="#popupSiglas" class="info-icono" aria-label="Significado de las siglas">i</a>
+      </div>
+
+      <img
+        class="robot"
+        src="/proyects/imagenes/coordenadas/robot.png"
+        alt="Robot ELOA"
+        loading="lazy"
+        decoding="async"
+        onerror="this.style.display='none'"
+      />
+
+      <div class="bloque-conversion distancia">
+        <p class="etiqueta">
+          Comprobación de la fórmula de la distancia entre dos puntos
+        </p>
+        <!-- TODO: apunta al link/página real de la fórmula de distancia -->
+        <a href="#popupConversion3" class="btn-conversion btn-distancia">
+          <button>d( B, A )</button>
+        </a>
+      </div>
+
+      
+          <div id="popupConversion3" class="popup">
+    <div class="popup-fotos">
+      <a href="#">
+        <span class="cerrar-fotos">&times;</span>
+      </a>
+      <!-- TODO: ajusta la ruta/cantidad de imágenes de los pasos en papel -->
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/B-A/1.png" alt="Fórmula de distancia, paso 1" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/B-A/2.png" alt="Fórmula de distancia, paso 2" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/B-A/3.png" alt="Fórmula de distancia, paso 3" loading="lazy" decoding="async">
+      <img class="popup-img" src="/proyects/imagenes/coordenadas/B-A/4.png" alt="Fórmula de distancia, paso 4" loading="lazy" decoding="async">
+    </div>
+  </div>
+
+
+    </div>
+
+  </section>
+
+  <!-- ===== Popup: Significado de las siglas ===== -->
+  <div id="popupSiglas" class="popup">
+    <div class="popup-contenido siglas-box">
+      <a href="#" class="cerrar" aria-label="Cerrar">&times;</a>
+      <h3>SIGNIFICADO DE LAS SIGLAS</h3>
+
+      <div class="siglas-item">
+        <span class="sigla">SCC</span>
+        <span class="significado">Sistema de Coordenadas Cilíndricas</span>
+      </div>
+      <div class="siglas-item">
+        <span class="sigla">SRC</span>
+        <span class="significado">Sistema Rectangular de Coordenadas</span>
+      </div>
+      <div class="siglas-item">
+        <span class="sigla">SCE</span>
+        <span class="significado">Sistema de Coordenadas Esféricas</span>
+      </div>
+    </div>
+  </div>
+
+</BaseLayoutCoord>
+
+<style>
+  /* Mismo sistema tipográfico que el resto del sitio: Space Grotesk para
+     títulos y etiquetas cortas, Montserrat para texto descriptivo. Ideal
+     moverlo a BaseLayoutCoord.astro como <link> para que no se descargue
+     por duplicado en cada página; por ahora queda aquí como @import. */
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Montserrat:wght@400;700&display=swap');
+
+  :root {
+    --font-display: 'Space Grotesk', Arial, sans-serif;
+    --font-body: 'Montserrat', Arial, sans-serif;
+  }
+
+  .lenguaje {
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 110px 1.25rem 3rem;
+    overflow: hidden;
+  }
+
+  .contenido {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+
+  h1 {
+    color: #0d1b4c;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.4rem, 5vw, 2.1rem);
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+  }
+
+  .subtitulo {
+    color: #555;
+    font-family: var(--font-body);
+    font-size: clamp(0.8rem, 2.5vw, 0.95rem);
+    max-width: 420px;
+    margin: 0 auto 2rem;
+    line-height: 1.4;
+  }
+
+  .bloque-conversion {
+    margin-bottom: 1.75rem;
+  }
+
+  /* ---------- Ícono de info junto al botón SCC - SCE ---------- */
+  .conversion-con-info {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .info-icono {
+    width: 44px;
+    height: 44px;
+    border: 3px solid #e8632a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e8632a;
+    font-family: Georgia, 'Times New Roman', serif;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.3rem;
+    text-decoration: none;
+    background: white;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    margin-bottom: 1.75rem;
+  }
+
+  .info-icono:hover {
+    background-color: #e8632a;
+    color: white;
+  }
+
+  /* ================================================================
+     POPUPS: hay 2 variantes, con clases separadas para que nunca se
+     pisen entre sí (antes compartían .popup-contenido/.cerrar y la
+     de fotos ganaba siempre por venir después en el CSS).
+     ================================================================ */
+
+  .popup {
+    display: none;
+    position: fixed;
+    z-index: 20;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 90px 20px 30px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .popup:target {
+    display: flex;
+  }
+
+  /* ---------- Variante 1: popup simple (significado de las siglas) ---------- */
+  .popup-contenido {
+    margin: 0;
+    max-width: 480px;
+    width: 85%;
+    position: relative;
+  }
+
+  .cerrar {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 1;
+  }
+
+  .cerrar:hover,
+  .cerrar:focus {
+    color: #0d1b4c;
+  }
+
+  /* ---------- Recuadro de siglas ---------- */
+  .siglas-box {
+    background-color: #e8632a;
+    border-radius: 30px;
+    padding: 2rem 1.75rem;
+    text-align: left;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
+    max-height: 80vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+
+  .siglas-box h3 {
+    color: white;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0 0 1.5rem;
+    line-height: 1.2;
+  }
+
+  .siglas-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 1.1rem;
+  }
+
+  .siglas-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .siglas-item .sigla {
+    color: #0d1b4c;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.1rem, 3.5vw, 1.35rem);
+    min-width: 3ch;
+    flex-shrink: 0;
+  }
+
+  .siglas-item .significado {
+    color: white;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: clamp(0.7rem, 2.2vw, 0.85rem);
+  }
+
+  /* ---------- Variante 2: popups de pasos con fotos ---------- */
+  .popup-fotos {
+    background-color: #fefefe;
+    margin: 0;
+    padding: 20px;
+    border-radius: 15px;
+    border: 3px solid #0d1b4c;
+    width: 85%;
+    max-width: 600px;
+    position: relative;
+    text-align: center;
+    max-height: 80vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .popup-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+
+  .cerrar-fotos {
+    position: sticky;
+    top: 0;
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: #0d1b4c;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+    z-index: 2;
+  }
+
+  .cerrar-fotos:hover,
+  .cerrar-fotos:focus {
+    background-color: #d95d1e;
+    color: #ffffff;
+  }
+
+  .etiqueta {
+    color: #0d1b4c;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+    margin-bottom: 0.6rem;
+  }
+
+  .btn-conversion {
+    display: inline-block;
+    text-decoration: none;
+  }
+
+  .btn-conversion button {
+    background-color: #0d1b4c;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 0.9rem 3.5rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(0.95rem, 3vw, 1.15rem);
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .btn-conversion button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(13, 27, 76, 0.35);
+  }
+
+  .btn-distancia button {
+    padding: 0.9rem 2.5rem;
+  }
+
+  .robot {
+    width: clamp(80px, 22vw, 120px);
+    height: auto;
+    margin: 0.5rem 0 1.5rem;
+  }
+
+  /* ---------- Círculos decorativos ---------- */
+  .circulo {
+    position: absolute;
+    border-radius: 50%;
+    border: 14px solid #a9c8dd;
+    opacity: 0.6;
+    z-index: 1;
+  }
+
+  .circulo-right {
+    width: 160px;
+    height: 160px;
+    top: 45%;
+    right: -70px;
+  }
+
+  /* ---------- A partir de aquí, ajustes para pantallas muy angostas ---------- */
+  @media (max-width: 420px) {
+    .btn-conversion button {
+      padding: 0.8rem 2rem;
+    }
+
+    .siglas-box {
+      padding: 1.5rem 1.25rem;
+    }
+
+    .siglas-item {
+      gap: 0.6rem;
+    }
+  }
+
+  @media (min-width: 700px) {
+    .lenguaje {
+      padding-top: 130px;
+    }
+
+    .popup {
+      padding-top: 110px;
+    }
+  }
+</style>
