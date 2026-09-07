@@ -129,6 +129,17 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 </BaseLayoutCoord>
 
 <style>
+  /* Mismo sistema tipográfico que el resto del sitio: Space Grotesk para
+     títulos y etiquetas cortas, Montserrat para texto descriptivo. Ideal
+     moverlo a BaseLayoutCoord.astro como <link> para que no se descargue
+     por duplicado en cada página; por ahora queda aquí como @import. */
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Montserrat:wght@400;700&display=swap');
+
+  :root {
+    --font-display: 'Space Grotesk', Arial, sans-serif;
+    --font-body: 'Montserrat', Arial, sans-serif;
+  }
+
   .lenguaje {
     position: relative;
     max-width: 950px;
@@ -145,8 +156,8 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 
   h1 {
     color: #0d1b4c;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: 800;
+    font-family: var(--font-display);
+    font-weight: 700;
     font-size: clamp(1.4rem, 5vw, 2.1rem);
     letter-spacing: 0.5px;
     margin-bottom: 0.5rem;
@@ -154,7 +165,7 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 
   .subtitulo {
     color: #555;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--font-body);
     font-size: clamp(0.8rem, 2.5vw, 0.95rem);
     max-width: 420px;
     margin: 0 auto 2rem;
@@ -215,6 +226,7 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
     width: 100%;
     height: 100%;
     overflow: auto;
+    overscroll-behavior: contain;
     background-color: rgba(0, 0, 0, 0.5);
   }
 
@@ -255,12 +267,13 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.3);
     max-height: 80vh;
     overflow-y: auto;
+    overscroll-behavior: contain;
   }
 
   .siglas-box h3 {
     color: white;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: 800;
+    font-family: var(--font-display);
+    font-weight: 700;
     font-size: clamp(1.2rem, 4vw, 1.5rem);
     text-align: center;
     text-transform: uppercase;
@@ -281,8 +294,8 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 
   .siglas-item .sigla {
     color: #0d1b4c;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: 800;
+    font-family: var(--font-display);
+    font-weight: 700;
     font-size: clamp(1.1rem, 3.5vw, 1.35rem);
     min-width: 3ch;
     flex-shrink: 0;
@@ -290,7 +303,7 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 
   .siglas-item .significado {
     color: white;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--font-body);
     font-weight: 700;
     font-size: clamp(0.7rem, 2.2vw, 0.85rem);
   }
@@ -308,6 +321,7 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
     text-align: center;
     max-height: 80vh;
     overflow-y: auto;
+    overscroll-behavior: contain;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -322,22 +336,31 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
   .cerrar-fotos {
     position: sticky;
     top: 0;
-    display: inline-block;
-    color: #aaa;
     align-self: flex-end;
-    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: #0d1b4c;
+    font-size: 22px;
     font-weight: bold;
     text-decoration: none;
+    z-index: 2;
   }
 
   .cerrar-fotos:hover,
   .cerrar-fotos:focus {
-    color: #d95d1e;
+    background-color: #d95d1e;
+    color: #ffffff;
   }
 
   .etiqueta {
     color: #0d1b4c;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--font-body);
     font-weight: 700;
     font-size: clamp(0.85rem, 2.5vw, 1rem);
     margin-bottom: 0.6rem;
@@ -354,8 +377,8 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
     border: none;
     border-radius: 30px;
     padding: 0.9rem 3.5rem;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: bold;
+    font-family: var(--font-display);
+    font-weight: 600;
     font-size: clamp(0.95rem, 3vw, 1.15rem);
     letter-spacing: 1px;
     cursor: pointer;

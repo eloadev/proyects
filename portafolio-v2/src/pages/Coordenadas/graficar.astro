@@ -30,10 +30,16 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 
       <div class="botones">
         <a href="#popupPapel">
-          <button class="btn-opcion">PAPEL</button>
+          <button class="btn-opcion">
+            <img src="/proyects/imagenes/coordenadas/papel.png" alt="" loading="lazy" decoding="async">
+            PAPEL
+          </button>
         </a>
         <a href="#popupGeogebra">
-          <button class="btn-opcion">GEOGEBRA</button>
+          <button class="btn-opcion">
+            <img src="/proyects/imagenes/coordenadas/geogebra.png" alt="" loading="lazy" decoding="async">
+            GEOGEBRA
+          </button>
         </a>
       </div>
     </div>
@@ -85,6 +91,17 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 </BaseLayoutCoord>
 
 <style>
+  /* Mismo sistema tipográfico que el resto del sitio: Space Grotesk para
+     títulos, Montserrat para texto de cuerpo. Ideal moverlo a
+     BaseLayoutCoord.astro como <link> para que no se descargue por
+     duplicado en cada página; por ahora queda aquí como @import. */
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Montserrat:wght@400;600&display=swap');
+
+  :root {
+    --font-display: 'Space Grotesk', Arial, sans-serif;
+    --font-body: 'Montserrat', Arial, sans-serif;
+  }
+
   section {
     max-width: 950px;
     margin: 0 auto;
@@ -97,8 +114,8 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 
   .visualiza h1 {
     color: #0d1b4c;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: 800;
+    font-family: var(--font-display);
+    font-weight: 700;
     font-size: clamp(1.6rem, 5vw, 2.4rem);
     letter-spacing: 0.5px;
     margin-bottom: 0.5rem;
@@ -107,6 +124,7 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 
   .subtitulo {
     color: #333;
+    font-family: var(--font-body);
     font-size: clamp(0.85rem, 2.5vw, 1rem);
     max-width: 480px;
     margin: 0 auto 1.5rem;
@@ -162,8 +180,8 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 
   .ahora h2 {
     color: #d95d1e;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: 800;
+    font-family: var(--font-display);
+    font-weight: 700;
     font-size: clamp(1.5rem, 6vw, 2rem);
     line-height: 1.15;
     margin: 0 0 1.5rem;
@@ -180,14 +198,25 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
     background-color: #7a8c3f;
     border: none;
     border-radius: 30px;
-    padding: 0.85rem 2.5rem;
+    padding: 0.85rem 2.2rem;
     cursor: pointer;
     transition: all 0.3s ease;
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-family: var(--font-display);
+    font-weight: 600;
     font-size: 1rem;
     letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .botones .btn-opcion img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex-shrink: 0;
   }
 
   .botones .btn-opcion:hover {
@@ -221,6 +250,7 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
     width: 100%;
     height: 100%;
     overflow: auto;
+    overscroll-behavior: contain;
     background-color: rgba(0, 0, 0, 0.5);
   }
 
@@ -240,6 +270,7 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
     text-align: center;
     max-height: 80vh;
     overflow-y: auto;
+    overscroll-behavior: contain;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -254,17 +285,26 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
   .cerrar {
     position: sticky;
     top: 0;
-    display: inline-block;
-    color: #aaa;
     align-self: flex-end;
-    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: #0d1b4c;
+    font-size: 22px;
     font-weight: bold;
     text-decoration: none;
+    z-index: 2;
   }
 
   .cerrar:hover,
   .cerrar:focus {
-    color: #d95d1e;
+    background-color: #d95d1e;
+    color: #ffffff;
   }
 </style>
 

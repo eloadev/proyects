@@ -115,6 +115,17 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 </BaseLayoutCoord>
 
 <style>
+  /* Mismo sistema tipográfico que el resto del sitio: Space Grotesk para
+     títulos y etiquetas cortas, Montserrat para texto descriptivo. Ideal
+     moverlo a BaseLayoutCoord.astro como <link> para que no se descargue
+     por duplicado en cada página; por ahora queda aquí como @import. */
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800&family=Montserrat:wght@400;700&display=swap');
+
+  :root {
+    --font-display: 'Space Grotesk', Arial, sans-serif;
+    --font-body: 'Montserrat', Arial, sans-serif;
+  }
+
   .desafio {
     position: relative;
     max-width: 950px;
@@ -132,8 +143,8 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 
   h1 {
     color: #0d1b4c;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: 800;
+    font-family: var(--font-display);
+    font-weight: 700;
     font-size: clamp(1.4rem, 5vw, 2.1rem);
     letter-spacing: 0.5px;
     text-align: center;
@@ -142,7 +153,7 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 
   .subtitulo {
     color: #555;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--font-body);
     font-size: clamp(0.8rem, 2.5vw, 0.95rem);
     text-align: center;
     line-height: 1.4;
@@ -151,7 +162,7 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
 
   .seccion-titulo {
     color: #0d1b4c;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: var(--font-display);
     font-weight: 700;
     font-size: clamp(0.9rem, 2.8vw, 1.05rem);
     margin: 0 0 0.9rem;
@@ -204,8 +215,8 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
     border: none;
     border-radius: 30px;
     padding: 0.8rem 2.2rem;
-    font-family: 'Segoe UI', sans-serif;
-    font-weight: bold;
+    font-family: var(--font-display);
+    font-weight: 600;
     font-size: clamp(0.85rem, 2.6vw, 1rem);
     letter-spacing: 0.5px;
     cursor: pointer;
@@ -283,6 +294,7 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
     width: 100%;
     height: 100%;
     overflow: auto;
+    overscroll-behavior: contain;
     background-color: rgba(0, 0, 0, 0.5);
   }
 
@@ -302,6 +314,7 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
     text-align: center;
     max-height: 80vh;
     overflow-y: auto;
+    overscroll-behavior: contain;
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -315,16 +328,25 @@ import BaseLayoutCoord from '../../layouts/BaseLayoutCoord.astro';
   .cerrar {
     position: sticky;
     top: 0;
-    display: inline-block;
-    color: #aaa;
     align-self: flex-end;
-    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    color: #0d1b4c;
+    font-size: 22px;
     font-weight: bold;
     text-decoration: none;
+    z-index: 2;
   }
 
   .cerrar:hover,
   .cerrar:focus {
-    color: #d95d1e;
+    background-color: #d95d1e;
+    color: #ffffff;
   }
 </style>
