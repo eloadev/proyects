@@ -11,6 +11,18 @@ import BaseLayoutPets from '../../layouts/BaseLayoutPets.astro';
       allowfullscreen
     ></iframe>
   </div>
+
+
+  <!-- MODAL: En Iphone no se puede  -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <button class="modal-close" id="modalClose" aria-label="Cerrar">×</button>
+    <h2>Este juego no esta disponible para dispositvos moviles de ¡OS </h2>
+    <p>Estamos trabajando en ello</p>
+    <img class="modal-image" src="/proyects/imagenes/inicio/lerpBombilla.png" alt="Trabajo en progreso" />
+  </div>
+</div>
+
 </BaseLayoutPets>
 
 <style>
@@ -26,4 +38,77 @@ import BaseLayoutPets from '../../layouts/BaseLayoutPets.astro';
     border: 0;
     border-radius: 22px;
   }
+  
+.modal-overlay{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal-overlay.activo{
+    display: flex;
+}
+
+.modal-box{
+    background: #F9F9F9;
+    border-radius: 12px;
+    padding: 32px;
+    max-width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    text-align: center;
+    position: relative;
+}
+
+.modal-box h2{
+    font-size: 26px;
+    color: var(--navy);
+}
+
+.modal-close{
+    position: absolute;
+    top: 8px;
+    right: 14px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    color: var(--navy);
+}
+
+.modal-image{
+    margin-top: 18px;
+    max-width: 30vh;
+    max-height: 30vh;
+    border-radius: 8px;
+}
 </style>
+
+<script>
+  const modalOverlay = document.getElementById('modalOverlay');
+  const modalClose = document.getElementById('modalClose');
+
+  function esIPhone() {
+    return /iPhone|iPod/.test(navigator.userAgent);
+  }
+
+  if (esIPhone()) {
+    modalOverlay?.classList.add('activo');
+  }
+
+  modalClose?.addEventListener('click', () => {
+    modalOverlay?.classList.remove('activo');
+  });
+
+  modalOverlay?.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) {
+      modalOverlay?.classList.remove('activo');
+    }
+  });
+</script>
