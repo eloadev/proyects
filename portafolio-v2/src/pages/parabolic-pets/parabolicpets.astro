@@ -39,15 +39,16 @@ import BaseLayoutPets from '../../layouts/BaseLayoutPets.astro';
     border-radius: 22px;
   }
   
-.modal-overlay{
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-    padding: 20px;
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+  padding-top: 80px; /* espacio para que no choque con el nav fijo */
 }
 
 .modal-overlay.activo{
