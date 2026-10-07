@@ -306,4 +306,17 @@ const base = import.meta.env.BASE_URL;
             font-size: 14px;
         }
     }
+
+    /* tablet: los arcos de 500px tapaban el texto; aquí se achican */
+    @media (min-width: 700px) and (max-width: 1100px) {
+        .arco {
+            width: 320px;
+            height: 320px;
+            border-width: 22px;
+        }
+        .arco-izquierdo { left: -270px; }
+        .arco-derecho { right: -270px; top: 60px; }
+        .redes-sociales { left: 64px; }
+        .footer-columnas { padding: 0 60px 0 110px; gap: 24px; }
+    }
 </style>
