@@ -192,4 +192,30 @@ h3{
     box-shadow: 0 4px 14px rgba(0,0,0,0.3);
     z-index: 4;
 }
+/* ===== Ajustes responsive (al final para que ganen) ===== */
+
+/* en celular/tablet "fixed" estira la madera a lo alto de toda la página;
+   aquí se repite hacia abajo a lo ancho de la pantalla */
+@media (max-width: 1024px), (hover: none) {
+    body{
+        background-attachment: scroll;
+        background-size: 100% auto;
+        background-repeat: repeat-y;
+        background-position: center top;
+    }
+}
+
+/* el menú en celular mide ~115px (logo + 2 filas de links): el título iba debajo */
+@media (max-width: 699px) {
+    .calc-hero{
+        padding-top: 135px;
+    }
+    /* texto justificado en pantallas angostas deja huecos enormes entre palabras */
+    .container_proyecto h3{
+        text-align: left;
+    }
+    .sobre-wrapper{
+        padding: 10px 20px 20px;
+    }
+}
 </style>

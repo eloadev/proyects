@@ -329,13 +329,17 @@ body{
 
 .onest{
     font-family: 'Onest', sans-serif;
-    font-size: 50px;
+    font-size: clamp(28px, 6vw, 50px);
+    line-height: 1.15;
     text-align: center;
+    padding: 0 16px;
 }
 
 .onest1{
     font-family: 'Onest', sans-serif;
-    font-size: 50px;
+    font-size: clamp(28px, 6vw, 50px);
+    line-height: 1.15;
+    padding: 0 16px;
     text-align: center;
     color: #FFCF0D;
     -webkit-text-stroke: 2px #B7521B;
@@ -416,10 +420,10 @@ h2{
    y el cielo continúa arriba, donde va el título */
 @media (max-width: 768px) and (orientation: portrait){
     .header-con-ola{
-        height: auto;
+        /* alto proporcional al ancho (3:4), pero sin pasar del 82% de la pantalla.
+           Antes aspect-ratio + max-height encogía el ancho y dejaba una franja blanca en tablet */
+        height: min(133vw, 82svh);
         min-height: 0;
-        aspect-ratio: 3 / 4;
-        max-height: 82svh;
         background:
             url('/imagenes/parabolicpets/fondo1-movil.webp') center bottom / 100% auto no-repeat,
             linear-gradient(180deg, #0f47a6 0%, #1656b8 60%);
