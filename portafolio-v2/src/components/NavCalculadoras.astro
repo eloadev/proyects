@@ -2,6 +2,13 @@
 const base = import.meta.env.BASE_URL;
 // src/components/NavCalculadoras.astro
 const pathname = Astro.url.pathname;
+const links = [
+  { href: `${base}Calculadoras/calculadoras`, label: 'INICIO' },
+  { href: `${base}Calculadoras/conversion`, label: 'CONVERSIÓN DE COORDENADAS' },
+  { href: `${base}Calculadoras/distancia`, label: 'DISTANCIA' },
+];
+// marca como activo el link de la página actual (antes INICIO siempre salía activo)
+const esActivo = (href: string) => pathname.replace(/\/$/, '') === href;
 ---
 
 <nav class="nav-calculadoras">
@@ -11,12 +18,18 @@ const pathname = Astro.url.pathname;
         </a>
     </div>
     
-        <a href={`${base}Calculadoras/calculadoras`} class="nav-link activo">INICIO</a>
-        <a href={`${base}Calculadoras/conversion`} class="nav-link">CONVERSIÓN DE COORDENADAS</a>
-        <a href={`${base}Calculadoras/distancia`} class="nav-link">DISTANCIA</a>
+    {links.map((l) => (
+        <a href={l.href} class:list={['nav-link', { activo: esActivo(l.href) }]}>{l.label}</a>
+    ))}
 </nav>
 
 <style>
+/* sin esto, width:100% + padding hacía el menú más ancho que la pantalla
+   y "DISTANCIA" se cortaba en celular */
+nav, nav *{
+    box-sizing: border-box;
+}
+
     header{
     background-color: #F9F9F9;
     box-shadow: 0 2px 6px rgba(0,0,0,0.2);
@@ -49,6 +62,11 @@ nav{
     font-weight: bold;
 
 }
+.nav-link.activo{
+    color: #2c5578;
+    border-bottom: 3px solid #7dabc5;
+}
+
 .nav-link:hover {
     color: #7dabc5; 
     border-bottom: 3px solid #7dabc5; /* línea de debajo */
@@ -77,12 +95,13 @@ nav{
     nav{
         min-height: 90px;
         flex-wrap: nowrap; /* ya no se envuelve, todo en una fila */
-        gap: 50px; /* el espaciado grande original */
-        padding: 0;
+        gap: clamp(20px, 4vw, 50px); /* en tablet se junta un poco para que quepa */
+        padding: 0 20px;
     }
 
     .nav-link{
-        font-size:18px; /* el tamaño grande original */
+        font-size: clamp(14px, 1.6vw, 18px);
+        white-space: nowrap;
     }
 
     .logo-box{

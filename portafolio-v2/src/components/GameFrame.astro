@@ -1,0 +1,133 @@
+---
+// src/components/GameFrame.astro
+// Marco responsivo para los juegos de Unity: 16:9 que nunca se sale de la
+// pantalla, botón de pantalla completa y aviso de girar el celular.
+// Uso: <GameFrame src="games/partyproblems/index.html" title="Party Problems" />
+interface Props {
+  src: string;   // ruta dentro de public/, sin "/" al inicio
+  title: string;
+}
+const { src, title } = Astro.props;
+const gameUrl = `${import.meta.env.BASE_URL}${src}`;
+---
+
+<section class="game-section">
+  <div class="game-wrap" data-game-wrap>
+    <iframe
+      src={gameUrl}
+      title={title}
+      allow="fullscreen; autoplay; gamepad"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <div class="game-actions">
+    <p class="rotar-aviso">Gira tu celular para jugar mejor</p>
+    <a class="btn-full" data-game-full href={gameUrl}>
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"></path>
+      </svg>
+      Pantalla completa
+    </a>
+  </div>
+</section>
+
+<script>
+  // Si el navegador permite pantalla completa, la usa; si no (iPhone),
+  // el enlace abre el juego solo en la pestaña.
+  document.querySelectorAll<HTMLAnchorElement>('[data-game-full]').forEach((btn) => {
+    const wrap = btn.closest('.game-section')?.querySelector<HTMLElement>('[data-game-wrap]');
+    btn.addEventListener('click', (e) => {
+      if (wrap && wrap.requestFullscreen && document.fullscreenEnabled) {
+        e.preventDefault();
+        wrap.requestFullscreen().catch(() => { window.location.href = btn.href; });
+      }
+    });
+  });
+</script>
+
+<style>
+  .game-section {
+    padding: 16px 16px 40px;
+  }
+
+  .game-wrap {
+    width: min(100%, 1100px, calc((100dvh - 180px) * 16 / 9));
+    margin: 0 auto;
+    aspect-ratio: 16 / 9;
+    border-radius: 22px;
+    overflow: hidden;
+    background: #231F20;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.18);
+  }
+
+  .game-wrap:fullscreen {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    aspect-ratio: auto;
+  }
+
+  .game-wrap iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .game-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px 16px;
+    margin-top: 16px;
+  }
+
+  .btn-full {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    background: #2c5578;
+    color: #fff;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    box-shadow: 0 6px 16px rgba(44, 85, 120, 0.3);
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+
+  .btn-full:hover { background: #1f4060; transform: translateY(-1px); }
+  .btn-full:focus-visible { outline: 3px solid #ff8a3d; outline-offset: 3px; }
+
+  .rotar-aviso {
+    display: none;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #2c5578;
+  }
+
+  @media (max-width: 699px) and (orientation: portrait) {
+    .rotar-aviso { display: block; }
+  }
+
+  @media (max-width: 699px) {
+    .game-section { padding: 8px 8px 24px; }
+    .game-wrap { width: 100%; border-radius: 14px; }
+  }
+
+  /* celular acostado: que el juego use casi toda la altura */
+  @media (max-height: 500px) and (orientation: landscape) {
+    :global(main) { padding-top: 78px; }
+    .game-section { padding: 6px 8px 20px; }
+    .game-wrap { width: min(100%, calc((100dvh - 120px) * 16 / 9)); border-radius: 12px; }
+    .game-actions { margin-top: 10px; }
+  }
+</style>

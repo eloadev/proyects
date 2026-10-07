@@ -241,6 +241,25 @@ body{
         padding: 28px;
     }
 }
+/* ===== Ajustes responsive (al final para que ganen) ===== */
+
+/* en celular/tablet "fixed" estira la madera a lo alto de toda la página;
+   aquí se repite hacia abajo a lo ancho de la pantalla */
+@media (max-width: 1024px), (hover: none) {
+    body{
+        background-attachment: scroll;
+        background-size: 100% auto;
+        background-repeat: repeat-y;
+        background-position: center top;
+    }
+}
+
+/* el menú en celular mide ~115px (logo + 2 filas de links): el título iba debajo */
+@media (max-width: 699px) {
+    .calc-hero{
+        padding-top: 135px;
+    }
+}
 </style>
 
 <script is:inline>

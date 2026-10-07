@@ -1,17 +1,11 @@
 ---
 const base = import.meta.env.BASE_URL;
 import BaseLayoutPets from '../../layouts/BaseLayoutPets.astro';
+import GameFrame from '../../components/GameFrame.astro';
 ---
 
 <BaseLayoutPets>
-  <div class="game-wrap">
-    <iframe
-      src={`${import.meta.env.BASE_URL}games/parabolicpets/index.html`}
-      title="Parabolic Pets"
-      loading="lazy"
-      allowfullscreen
-    ></iframe>
-  </div>
+  <GameFrame src="games/parabolicpets/index.html" title="Parabolic Pets" />
 
 
   <!-- MODAL: En Iphone no se puede  -->
@@ -27,19 +21,6 @@ import BaseLayoutPets from '../../layouts/BaseLayoutPets.astro';
 </BaseLayoutPets>
 
 <style>
-  .game-wrap {
-    width: 100%;
-    max-width: 1040px;
-    margin: 0 auto;
-    aspect-ratio: 16 / 9;
-  }
-  .game-wrap iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    border-radius: 22px;
-  }
-  
 .modal-overlay {
   display: none;
   position: fixed;
