@@ -3,43 +3,53 @@ const base = import.meta.env.BASE_URL;
 import BaseLayoutProtocol from '../../layouts/BaseLayoutProtocol.astro';
 
 
-// Bocetos / dibujos (sección final). El orden es el que se ve en la página.
+const carpeta = `${base}imagenes/protocol-entropy/`;
+
+const imagenes = {
+  arte: 'piloto1.webp',      
+  ciudad: 'ciudadbien.webp',    
+};
+
+// Convierte el nombre del archivo en la ruta completa (¡no borrar esta línea!)
+const ruta = (nombre) => (nombre ? carpeta + nombre : '');
+
+
 const bocetos = [
   {
     titulo: 'Pilotos',
     desc: 'Los cadetes enviados a combatir a la Colmena Kaiju. El protagonista, Axis, tiene un ADN aislado topológicamente que le permite alternar entre tres configuraciones de combate dentro del Sarcófago Biomecánico.',
-    imagen: '',
+    imagen: 'piloto.webp',
   },
-  { titulo: 'Ducados', desc: 'Descripción de los ducados.', imagen: '' },
+  { titulo: 'Ducados', desc: 'Descripción de los ducados.', imagen: 'ducados.webp' },
   {
     titulo: 'Kaijus',
     desc: 'La Colmena Kaiju es la gran amenaza: recolecta biomasa para alimentar a su Reina, representada como un agujero negro temporal. Su sangre funciona como material superconductor dentro del juego.',
-    imagen: '',
+    imagen: 'kaijus.webp',
   },
   {
     titulo: 'Máquina sintetizadora',
     desc: 'En la fase de síntesis subatómica, el jugador fusiona quarks Up y Down para formar nucleones (protones y neutrones), inspirado en la nucleosíntesis estelar. Luego estabiliza la mezcla con sangre Kaiju para producir el Líquido de Enlace.',
-    imagen: '',
+    imagen: 'maquinasintetizadora.webp',
   },
   {
     titulo: 'Base "Humanidad"',
     desc: 'Vista desde arriba del hogar de una humanidad que lleva sesenta mil años estancada biológicamente.',
-    imagen: '',
+    imagen: 'base-humanidad.webp',
   },
   {
     titulo: 'Ciudadanos en la ciudad',
     desc: 'Los habitantes de la "Utopía Colectiva", que viven bajo el control del Cónclave de los Cuatro.',
-    imagen: '',
+    imagen: 'ciudadbien.webp',
   },
   {
     titulo: 'Ciudad destruida',
     desc: 'La misma ciudad, ahora en ruinas: el contraste con la aparente calma de la Utopía Colectiva.',
-    imagen: '',
+    imagen: 'ciudaddestruida.webp',
   },
   {
     titulo: '"Universo" y planetas muertos',
     desc: 'El universo de ciencia ficción donde ocurre la historia.',
-    imagen: '',
+    imagen: 'universo.webp',
   },
 ];
 
@@ -59,13 +69,17 @@ const pilotos = Array.from({ length: 6 });
     <svg class="nave nave-2" viewBox="0 0 64 32" aria-hidden="true"><path d="M2 16 L40 12 L56 4 L60 6 L50 14 L62 16 L50 18 L60 26 L56 28 L40 20 Z" /></svg>
 
     <!-- edificios a la izquierda -->
-    <svg class="ciudad" viewBox="0 0 160 220" preserveAspectRatio="xMinYMax meet" aria-hidden="true">
-      <rect x="0" y="110" width="26" height="110" />
-      <rect x="30" y="40" width="30" height="180" />
-      <rect x="64" y="80" width="22" height="140" />
-      <rect x="90" y="10" width="28" height="210" />
-      <rect x="122" y="120" width="34" height="100" />
-    </svg>
+    {imagenes.ciudad ? (
+      <img class="ciudad ciudad-img" src={ruta(imagenes.ciudad)} alt="" aria-hidden="true" />
+    ) : (
+      <svg class="ciudad" viewBox="0 0 160 220" preserveAspectRatio="xMinYMax meet" aria-hidden="true">
+        <rect x="0" y="110" width="26" height="110" />
+        <rect x="30" y="40" width="30" height="180" />
+        <rect x="64" y="80" width="22" height="140" />
+        <rect x="90" y="10" width="28" height="210" />
+        <rect x="122" y="120" width="34" height="100" />
+      </svg>
+    )}
 
     <div class="hero-contenido">
       <span class="etiqueta">Idea en desarrollo</span>
@@ -85,9 +99,13 @@ const pilotos = Array.from({ length: 6 });
     </div>
 
     <!-- arte principal a la derecha -->
-    <div class="arte-holder" role="img" aria-label="Arte principal (placeholder)">
-      <span class="placeholder-tag">arte principal · placeholder</span>
-    </div>
+    {imagenes.arte ? (
+      <img class="arte-holder arte-img" src={ruta(imagenes.arte)} alt="Arte principal de Protocol Entropy" fetchpriority="high" />
+    ) : (
+      <div class="arte-holder" role="img" aria-label="Arte principal (placeholder)">
+        <span class="placeholder-tag">arte principal · placeholder</span>
+      </div>
+    )}
 
     <!-- pilotos como silueta, baja opacidad -->
     <div class="pilotos" aria-hidden="true">
@@ -138,7 +156,7 @@ const pilotos = Array.from({ length: 6 });
     </div>
 
     <div class="firma-eloa">
-      <img src={`${base}imagenes/inicio/logo-eloa-blanco.webp`} alt="ELOA Dev Team" width="900" height="273" loading="lazy" decoding="async" />
+      <img src={ruta('eloalogo.png')} alt="ELOA Dev Team" width="900" height="273" loading="lazy" decoding="async" />
     </div>
   </section>
 
@@ -182,7 +200,7 @@ const pilotos = Array.from({ length: 6 });
       {bocetos.map((b, i) => (
         <article class:list={["boceto", { invertido: i % 2 === 1 }]}>
           {b.imagen ? (
-            <img class="boceto-img" src={b.imagen} alt={b.titulo} loading="lazy" decoding="async" />
+            <img class="boceto-img" src={ruta(b.imagen)} alt={b.titulo} loading="lazy" decoding="async" />
           ) : (
             <div class="holder boceto-img" role="img" aria-label={`${b.titulo} (placeholder)`}>
               <span class="placeholder-tag">{b.titulo} · placeholder</span>
@@ -678,5 +696,75 @@ const pilotos = Array.from({ length: 6 });
 
   @media (prefers-reduced-motion: reduce) {
     .nave, .iconos svg, .scroll-cue { animation: none; }
+  }
+
+  /* Cuando ya pusiste la imagen real del arte principal o de los edificios */
+  /* ===== Imágenes reales a los lados del título (ciudad a la izquierda, arte a la derecha) =====
+     Las dos van como "ventanas" en forma de arco, del mismo tamaño y a la misma altura. */
+  .arte-img,
+  .ciudad-img {
+    display: block;
+    width: min(230px, 19vw);
+    height: auto;
+    aspect-ratio: 3 / 5;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 999px 999px 24px 24px;
+    border: 2px solid rgba(255, 77, 109, 0.55);
+    padding: 0;
+    background: #140205;
+    box-shadow:
+      0 0 0 6px rgba(255, 31, 75, 0.08),
+      0 18px 40px rgba(255, 31, 75, 0.25);
+    align-self: center;
+    margin: 0 0 60px;
+    opacity: 1;
+  }
+
+  .ciudad-img {
+    grid-column: 1;
+    justify-self: start;
+    transform: rotate(-2deg);
+  }
+
+  .arte-img {
+    grid-column: 3;
+    justify-self: end;
+    transform: rotate(2deg);
+    /* se muestra la imagen completa (no se recorta), parada abajo, con brillo rojo detrás */
+    object-fit: contain;
+    object-position: center bottom;
+    padding: 18px 12px 0;
+    background:
+      radial-gradient(ellipse at 50% 45%, rgba(255, 31, 75, 0.38), transparent 70%),
+      #140205;
+  }
+
+  /* Celular: las dos imágenes lado a lado, debajo del texto */
+  @media (max-width: 820px) {
+    .hero {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 14px;
+    }
+    .hero-contenido,
+    .pilotos,
+    .arte-holder {
+      grid-column: 1 / -1;
+    }
+    .hero-contenido { order: -1; }
+
+    .ciudad-img,
+    .arte-img {
+      position: static;
+      width: min(160px, 40vw);
+      margin: 0 0 24px;
+      opacity: 1;
+    }
+    .ciudad-img { grid-column: 1; justify-self: end; }
+    .arte-img { grid-column: 2; justify-self: start; }
+
+    /* si solo hay una de las dos imágenes, se centra */
+    .hero:not(:has(.ciudad-img)) .arte-img { grid-column: 1 / -1; justify-self: center; }
+    .hero:not(:has(.arte-img)) .ciudad-img { grid-column: 1 / -1; justify-self: center; }
   }
 </style>
