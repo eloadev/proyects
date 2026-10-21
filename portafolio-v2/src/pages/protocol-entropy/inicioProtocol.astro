@@ -7,7 +7,8 @@ const carpeta = `${base}imagenes/protocol-entropy/`;
 
 const imagenes = {
   arte: 'piloto1.webp',      
-  ciudad: 'ciudadbien.webp',    
+  ciudad: 'domoaxis.webp',    
+  ideaJuego: 'edificios.webp', // imagen junto a "Un mundo futurista"
 };
 
 // Convierte el nombre del archivo en la ruta completa (¡no borrar esta línea!)
@@ -164,9 +165,13 @@ const pilotos = Array.from({ length: 6 });
   <section class="sobre" id="sobre">
     <h2 class="seccion-titulo">La idea del juego</h2>
     <div class="sobre-grid">
-      <div class="holder holder-grande" role="img" aria-label="Imagen de boceto (placeholder)">
-        <span class="placeholder-tag">imagen boceto · placeholder</span>
-      </div>
+      {imagenes.ideaJuego ? (
+        <img class="holder-grande idea-img" src={ruta(imagenes.ideaJuego)} alt="Un mundo futurista" loading="lazy" decoding="async" />
+      ) : (
+        <div class="holder holder-grande" role="img" aria-label="Imagen de boceto (placeholder)">
+          <span class="placeholder-tag">imagen boceto · placeholder</span>
+        </div>
+      )}
       <div class="sobre-texto">
         <h3>Un mundo futurista</h3>
         <p>
@@ -766,5 +771,21 @@ const pilotos = Array.from({ length: 6 });
     /* si solo hay una de las dos imágenes, se centra */
     .hero:not(:has(.ciudad-img)) .arte-img { grid-column: 1 / -1; justify-self: center; }
     .hero:not(:has(.arte-img)) .ciudad-img { grid-column: 1 / -1; justify-self: center; }
+  }
+
+  /* Imagen de "Un mundo futurista" */
+  .idea-img {
+    display: block;
+    /* se muestra completa (sirve igual para imágenes verticales u horizontales) */
+    aspect-ratio: auto;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 520px;
+    margin: 0 auto;
+    object-fit: contain;
+    border-radius: 14px;
+    border: 2px solid rgba(255, 77, 109, 0.45);
+    box-shadow: 0 18px 40px rgba(255, 31, 75, 0.22);
   }
 </style>
